@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { UploadedFile, MergeResult, Step } from './types';
-import { mergePdfs, createDemoDocket, generateJobId } from './utils/pdfUtils';
+import { mergePdfs, generateJobId } from './utils/pdfUtils';
 import { Header } from './components/Header';
 import { FooterBar } from './components/FooterBar';
 import { UploadStep } from './components/UploadStep';
@@ -60,19 +60,6 @@ export default function App() {
 
   // Rename modal state
   const [renameModalOpen, setRenameModalOpen] = useState(false);
-
-  // Initialize with the realistic 3 demo files on initial mount so the user gets instant feedback
-  useEffect(() => {
-    let isMounted = true;
-    createDemoDocket().then((demoFiles) => {
-      if (isMounted) {
-        setFiles(demoFiles);
-      }
-    });
-    return () => {
-      isMounted = false;
-    };
-  }, []);
 
   // Keyboard shortcuts (SPACE for preview, CMD/CTRL+ENTER for combine, DEL for remove last)
   useEffect(() => {
