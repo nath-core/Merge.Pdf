@@ -32,7 +32,7 @@ export function Header({
           </div>
           <div className="flex items-baseline gap-2">
             <h1 className="text-3xl sm:text-4xl font-black uppercase tracking-tighter text-black">
-              PDF_MASH
+              MERGE PDF
             </h1>
             <span className="hidden sm:inline-block bg-black text-[#FFD700] px-1.5 py-0.5 font-mono text-[11px] font-black tracking-widest uppercase">
               v4.2

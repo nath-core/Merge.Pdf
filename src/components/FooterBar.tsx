@@ -41,7 +41,7 @@ export function FooterBar({ isDarkMode, onToggleDarkMode, statusText = 'ENGINE R
         <div className="flex items-center gap-4">
           <div className="hidden sm:flex items-center gap-1 text-neutral-400 font-mono">
             <Shield className="w-3.5 h-3.5 text-[#00FF00]" />
-            <span>©2024 PDF_MASH_LABS</span>
+            <span>©2024 MERGE_PDF_LABS</span>
           </div>
 
           <button
