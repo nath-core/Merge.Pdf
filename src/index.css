@@ -1,0 +1,286 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'Space Mono', monospace;
+    --font-body: 'Public Sans', sans-serif;
+  }
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+/* Editorial Aesthetic Hard Shadows */
+.brutal-shadow {
+  box-shadow: 6px 6px 0px 0px rgba(0, 0, 0, 1);
+}
+
+.brutal-shadow-sm {
+  box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 1);
+}
+
+.brutal-shadow-md {
+  box-shadow: 6px 6px 0px 0px rgba(0, 0, 0, 1);
+}
+
+.brutal-shadow-lg {
+  box-shadow: 8px 8px 0px 0px rgba(0, 0, 0, 1);
+}
+
+.editorial-card {
+  box-shadow: 8px 8px 0px 0px rgba(0, 0, 0, 1);
+}
+
+.editorial-btn {
+  transition: all 0.1s ease;
+}
+
+.editorial-btn:hover:not(:disabled) {
+  transform: translate(-2px, -2px);
+  box-shadow: 8px 8px 0px 0px rgba(0, 0, 0, 1);
+}
+
+.editorial-btn:active:not(:disabled) {
+  transform: translate(2px, 2px);
+  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 1) !important;
+}
+
+.brutal-btn {
+  transition: all 0.1s ease;
+}
+
+.brutal-btn:hover:not(:disabled) {
+  transform: translate(-2px, -2px);
+  box-shadow: 8px 8px 0px 0px rgba(0, 0, 0, 1);
+}
+
+.brutal-btn:active:not(:disabled) {
+  transform: translate(2px, 2px);
+  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 1) !important;
+}
+
+/* Ticker marquee animation */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 25s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* ========================================================
+   TRUE BLACK EDITORIAL DARK MODE
+   ======================================================== */
+
+/* Root & body level true black canvas */
+.dark-theme,
+html.dark-theme,
+body.dark-theme {
+  background-color: #000000 !important;
+  color: #FFFFFF !important;
+}
+
+/* White and light-grey containers become pure True Black */
+.dark-theme .bg-white {
+  background-color: #000000 !important;
+  color: #FFFFFF !important;
+}
+
+.dark-theme .bg-\[\#F4F4F0\],
+.dark-theme .bg-\[\#F0F0F0\],
+.dark-theme .bg-\[\#FAF9F5\],
+.dark-theme .bg-neutral-100,
+.dark-theme .bg-neutral-50 {
+  background-color: #000000 !important;
+  color: #FFFFFF !important;
+}
+
+/* Text inputs, textareas, and select elements */
+.dark-theme input[type="text"],
+.dark-theme textarea {
+  background-color: #000000 !important;
+  color: #FFFFFF !important;
+  border-color: #FFFFFF !important;
+}
+
+.dark-theme input::placeholder {
+  color: #888888 !important;
+}
+
+/* Borders on dark surfaces: crisp pure white */
+.dark-theme .border-black,
+.dark-theme .border-\[\#121212\],
+.dark-theme .border-neutral-900,
+.dark-theme .border-neutral-800,
+.dark-theme .border-b-8.border-black:not(header),
+.dark-theme .border-t-8.border-black,
+.dark-theme .border-4.border-black,
+.dark-theme .border-3.border-black,
+.dark-theme .border-2.border-black,
+.dark-theme .border.border-black {
+  border-color: #FFFFFF !important;
+}
+
+/* Footer top border in dark mode */
+.dark-theme footer {
+  border-top-color: #FFFFFF !important;
+}
+
+/* Brutalist drop shadows in dark mode: bright editorial yellow so they pop on true black */
+.dark-theme .brutal-shadow,
+.dark-theme .brutal-shadow-md,
+.dark-theme .brutal-shadow-lg,
+.dark-theme .editorial-card,
+.dark-theme [class*="shadow-[6px"],
+.dark-theme [class*="shadow-[8px"] {
+  box-shadow: 6px 6px 0px 0px #FFD700 !important;
+}
+
+.dark-theme .brutal-shadow-sm,
+.dark-theme [class*="shadow-[2px"],
+.dark-theme [class*="shadow-[3px"],
+.dark-theme [class*="shadow-[4px"] {
+  box-shadow: 4px 4px 0px 0px #FFD700 !important;
+}
+
+.dark-theme :active {
+  box-shadow: 0px 0px 0px 0px transparent !important;
+}
+
+/* ========================================================
+   HIGH-CONTRAST TYPOGRAPHY IN TRUE BLACK
+   ======================================================== */
+
+/* Dark text classes become pure white on dark surfaces */
+.dark-theme .text-black,
+.dark-theme .text-\[\#121212\],
+.dark-theme .text-neutral-900,
+.dark-theme .text-neutral-800,
+.dark-theme .text-neutral-700 {
+  color: #FFFFFF !important;
+}
+
+.dark-theme .text-neutral-600,
+.dark-theme .text-neutral-500 {
+  color: #D1D5DB !important;
+}
+
+/* SVG icons that were black or dark neutral become white */
+.dark-theme svg.text-black,
+.dark-theme svg.text-\[\#121212\],
+.dark-theme svg.text-neutral-800,
+.dark-theme svg.text-neutral-700 {
+  color: #FFFFFF !important;
+  stroke: #FFFFFF !important;
+}
+
+/* Drag & drop zone dashed border when not dragging */
+.dark-theme .border-dashed {
+  border-color: #FFFFFF !important;
+}
+
+/* Index watermark number on cards in dark mode */
+.dark-theme .opacity-20 {
+  opacity: 0.45 !important;
+  color: #FFFFFF !important;
+}
+
+/* ========================================================
+   PRESERVE BLACK TEXT ON BRIGHT ACCENT ELEMENTS
+   ======================================================== */
+
+/* Yellow, bright green, and accent buttons & badges MUST keep pure black text and black icons */
+.dark-theme .bg-\[\#FFD700\],
+.dark-theme .bg-\[\#FFE600\],
+.dark-theme .bg-yellow-300,
+.dark-theme .bg-\[\#00FF00\],
+.dark-theme .bg-\[\#5AFFC8\],
+.dark-theme .bg-\[\#FF6B6B\] {
+  color: #000000 !important;
+}
+
+.dark-theme .bg-\[\#FFD700\] *:not(.bg-black, .bg-black *),
+.dark-theme .bg-\[\#FFE600\] *:not(.bg-black, .bg-black *),
+.dark-theme .bg-yellow-300 *:not(.bg-black, .bg-black *),
+.dark-theme .bg-\[\#00FF00\] *:not(.bg-black, .bg-black *),
+.dark-theme .bg-\[\#5AFFC8\] *:not(.bg-black, .bg-black *),
+.dark-theme .bg-\[\#FF6B6B\] *:not(.bg-black, .bg-black *) {
+  color: #000000 !important;
+}
+
+.dark-theme .bg-\[\#FFD700\] svg:not(.bg-black svg),
+.dark-theme .bg-\[\#FFE600\] svg:not(.bg-black svg),
+.dark-theme .bg-yellow-300 svg:not(.bg-black svg),
+.dark-theme .bg-\[\#00FF00\] svg:not(.bg-black svg),
+.dark-theme .bg-\[\#5AFFC8\] svg:not(.bg-black svg),
+.dark-theme .bg-\[\#FF6B6B\] svg:not(.bg-black svg) {
+  color: #000000 !important;
+  stroke: #000000 !important;
+}
+
+/* Keep borders black inside yellow/green buttons & badges */
+.dark-theme .bg-\[\#FFD700\] [class*="border-"],
+.dark-theme .bg-\[\#FFE600\] [class*="border-"],
+.dark-theme .bg-\[\#00FF00\] [class*="border-"],
+.dark-theme .bg-yellow-300 [class*="border-"] {
+  border-color: #000000 !important;
+}
+
+/* Icon box inside big yellow download button: bg-black with yellow icon */
+.dark-theme .bg-\[\#FFD700\] .bg-black,
+.dark-theme .bg-\[\#FFD700\] .bg-black * {
+  background-color: #000000 !important;
+  color: #FFD700 !important;
+}
+
+.dark-theme .bg-\[\#FFD700\] .bg-black svg {
+  stroke: #FFD700 !important;
+}
+
+/* Header styling in dark mode: maintain bright yellow banner with crisp black text */
+.dark-theme header.bg-\[\#FFD700\] {
+  background-color: #FFD700 !important;
+  border-bottom-color: #000000 !important;
+  color: #000000 !important;
+}
+
+.dark-theme header .bg-white {
+  background-color: #FFFFFF !important;
+  color: #000000 !important;
+  border-color: #000000 !important;
+}
+
+.dark-theme header .bg-white * {
+  color: #000000 !important;
+}
+
+.dark-theme header [class*="shadow-["] {
+  box-shadow: 3px 3px 0px 0px #000000 !important;
+}
+
+/* QR Code & PDF Viewer exceptions */
+.dark-theme .w-36.h-36 {
+  background-color: #FFFFFF !important;
+}
+
+.dark-theme iframe {
+  background-color: #FFFFFF !important;
+}
+

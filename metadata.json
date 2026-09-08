@@ -1,0 +1,8 @@
+{
+  "name": "MERGE.PDF Combinator",
+  "description": "Neo-Brutalist client-side PDF combiner and merger with preview, reordering, and instant download.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
